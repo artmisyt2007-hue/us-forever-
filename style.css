@@ -1,0 +1,351 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:white;
+    overflow-x:hidden;
+    background:linear-gradient(-45deg,#ff4b8b,#7b2ff7,#00c9ff,#ff758c);
+    background-size:400% 400%;
+    animation:bg 15s ease infinite;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Loader */
+
+#loader{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#090018;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    animation:hideLoader 3s forwards;
+}
+
+#loader h1{
+    font-size:60px;
+    font-family:"Great Vibes",cursive;
+    color:#fff;
+}
+
+#loader p{
+    margin-top:20px;
+    opacity:.8;
+}
+
+@keyframes hideLoader{
+    80%{opacity:1;}
+    100%{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+/* Floating Stars */
+
+#stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+    background-size:50px 50px;
+    opacity:.25;
+    animation:stars 60s linear infinite;
+    z-index:-3;
+}
+
+@keyframes stars{
+    from{transform:translateY(0);}
+    to{transform:translateY(-1000px);}
+}
+
+/* Hearts */
+
+#hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:-2;
+}
+
+/* Navbar */
+
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(255,255,255,.15);
+    z-index:1000;
+}
+
+nav{
+    width:90%;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+nav h2{
+    font-family:"Great Vibes";
+    font-size:35px;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffd6e8;
+}
+
+/* Sections */
+
+section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:120px 20px;
+}
+
+/* Glass Card */
+
+.glass{
+    width:90%;
+    max-width:700px;
+    text-align:center;
+    padding:45px;
+    border-radius:30px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.2);
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+.glass h1{
+    font-family:"Great Vibes";
+    font-size:75px;
+    margin-bottom:20px;
+}
+
+.glass p{
+    font-size:20px;
+    margin-bottom:35px;
+}
+
+/* Timers */
+
+.timers{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin:30px 0;
+}
+
+.timer{
+    background:rgba(255,255,255,.12);
+    padding:20px;
+    border-radius:20px;
+}
+
+.timer h3{
+    margin-bottom:15px;
+}
+
+#loveTimer,
+#meetTimer{
+    font-size:18px;
+    font-weight:600;
+    line-height:1.7;
+}
+
+/* Button */
+
+button{
+    border:none;
+    cursor:pointer;
+    padding:16px 40px;
+    border-radius:50px;
+    font-size:18px;
+    background:white;
+    color:#ff3b8d;
+    transition:.35s;
+    font-weight:bold;
+}
+
+button:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 10px 30px rgba(255,255,255,.4);
+}
+
+/* Gallery */
+
+#gallery h1{
+    font-size:50px;
+    margin-bottom:40px;
+    font-family:"Great Vibes";
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+    width:90%;
+    max-width:1100px;
+}
+
+.gallery img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:25px;
+    transition:.5s;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* Letter */
+
+.letter{
+    width:90%;
+    max-width:850px;
+    padding:50px;
+    background:rgba(255,255,255,.12);
+    border-radius:25px;
+    backdrop-filter:blur(18px);
+}
+
+.letter h1{
+    font-family:"Great Vibes";
+    font-size:55px;
+    margin-bottom:25px;
+}
+
+.letter p{
+    font-size:20px;
+    line-height:2;
+}
+
+/* Music */
+
+.player{
+    width:90%;
+    max-width:700px;
+    text-align:center;
+}
+
+audio{
+    width:100%;
+    margin:30px 0;
+}
+
+.songs{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* Footer */
+
+footer{
+    padding:60px 20px;
+    text-align:center;
+    background:rgba(0,0,0,.2);
+}
+
+footer h2{
+    font-family:"Great Vibes";
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+/* Floating animation */
+
+.glass,
+.gallery img,
+.letter{
+    animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.glass h1{
+    font-size:55px;
+}
+
+.timers{
+    grid-template-columns:1fr;
+}
+
+.gallery img{
+    height:330px;
+}
+
+.letter{
+    padding:30px;
+}
+
+.letter h1{
+    font-size:42px;
+}
+
+.letter p{
+    font-size:17px;
+}
+
+button{
+    width:100%;
+}
+
+}
